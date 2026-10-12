@@ -151,7 +151,7 @@ async function send(text) {
     history.push({ role: "assistant", content: full });
   } catch (e) {
     bubble.className = "msg err";
-    bubble.textContent = "No pude conectar con la PC: " + e.message;
+    bubble.textContent = "No pude conectar con la PC.\nURL: " + cfg.url + "\nError: " + e.name + " - " + e.message;
     history.pop(); // quita el mensaje del usuario sin respuesta
   } finally {
     busy = false;
@@ -200,7 +200,7 @@ $("btnTest").onclick = async () => {
     const names = (j.models || []).map((m) => m.name).join(", ");
     out.textContent = "OK. Modelos: " + (names || "ninguno");
   } catch (e) {
-    out.textContent = "Falló: " + e.message;
+    out.textContent = "Falló (" + base + "/api/tags): " + e.name + " - " + e.message;
   }
 };
 
