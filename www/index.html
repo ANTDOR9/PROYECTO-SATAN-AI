@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SATAN AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1 id="title">SATAN AI</h1>
+  <div class="actions">
+    <button id="btnClear" title="Nueva conversación">↺</button>
+    <button id="btnSettings" title="Ajustes">⚙</button>
+  </div>
+</header>
+
+<main id="chat" aria-live="polite"></main>
+
+<form id="form" autocomplete="off">
+  <textarea id="input" rows="1" placeholder="Habla..." enterkeyhint="send"></textarea>
+  <button id="btnSend" type="submit">Enviar</button>
+</form>
+
+<dialog id="settings">
+  <h2>Ajustes</h2>
+  <label>URL del servidor
+    <input id="cfgUrl" type="url" placeholder="http://192.168.1.50:11434">
+  </label>
+  <label>Modelo
+    <input id="cfgModel" type="text" placeholder="sparring">
+  </label>
+  <label>Tipo de API
+    <select id="cfgApi">
+      <option value="ollama">Ollama nativa (/api/chat)</option>
+      <option value="openai">Compatible OpenAI (/v1/chat/completions)</option>
+    </select>
+  </label>
+  <label>Temperatura
+    <input id="cfgTemp" type="number" step="0.05" min="0" max="2">
+  </label>
+  <label>Turnos de historial
+    <input id="cfgTurns" type="number" min="2" max="30">
+  </label>
+  <label>System prompt (personalidad)
+    <textarea id="cfgSystem" rows="10"></textarea>
+  </label>
+  <div class="row">
+    <button type="button" id="btnTest">Probar conexión</button>
+    <button type="button" id="btnReset">Prompt por defecto</button>
+  </div>
+  <p id="testResult"></p>
+  <div class="row">
+    <button type="button" id="btnCancel">Cerrar</button>
+    <button type="button" id="btnSave" class="primary">Guardar</button>
+  </div>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

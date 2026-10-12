@@ -1,0 +1,9 @@
+{
+  "appId": "com.anthony.satanai",
+  "appName": "SATAN AI",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  }
+}
