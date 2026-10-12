@@ -1,7 +1,26 @@
+# Dependencias
 node_modules/
-android/build/
+
+# Android / Gradle (se regeneran)
 android/.gradle/
+android/build/
 android/app/build/
+android/capacitor-cordova-android-plugins/
+android/app/src/main/assets/public/
+android/app/src/main/assets/capacitor.config.json
+android/app/src/main/assets/capacitor.plugins.json
 android/local.properties
-.idea/
+android/.idea/
+android/captures/
 *.apk
+*.aab
+*.keystore
+*.jks
+
+# IDE / sistema
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
